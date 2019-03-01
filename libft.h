@@ -6,7 +6,7 @@
 /*   By: bkjornra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 09:38:39 by bkjornra          #+#    #+#             */
-/*   Updated: 2019/03/01 03:37:13 by bkjornra         ###   ########.fr       */
+/*   Updated: 2019/03/01 14:14:04 by bkjornra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,5 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 int					ft_digit_len(int num);
 int					ft_whitespace(char c);
-static	int		ft_count_words(char const *str, char c);
 
 #endif
