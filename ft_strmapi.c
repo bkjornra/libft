@@ -6,7 +6,7 @@
 /*   By: bkjornra <bkjornra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/16 11:39:14 by bkjornra          #+#    #+#             */
-/*   Updated: 2019/02/28 18:45:10 by bkjornra         ###   ########.fr       */
+/*   Updated: 2019/03/01 16:55:14 by bkjornra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (!s || !f)
 		return (NULL);
-	result = ft_strnew(strlen(s));
+	result = ft_strnew(ft_strlen(s));
 	if (!result)
 		return (NULL);
 	ft_strcpy(result, s);

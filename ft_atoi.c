@@ -6,16 +6,16 @@
 /*   By: bkjornra <bkjornra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/30 00:20:51 by bkjornra          #+#    #+#             */
-/*   Updated: 2019/02/28 18:05:20 by bkjornra         ###   ########.fr       */
+/*   Updated: 2019/03/01 20:44:10 by bkjornra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int		ft_atoi(const char *str)
 {
-	int	result;
-	int	sign;
+	int		result;
+	int		sign;
 
 	result = 0;
 	sign = 1;
