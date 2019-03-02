@@ -6,17 +6,11 @@
 /*   By: bkjornra <bkjornra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/16 11:42:54 by bkjornra          #+#    #+#             */
-/*   Updated: 2019/03/01 14:52:00 by bkjornra         ###   ########.fr       */
+/*   Updated: 2019/03/01 16:02:04 by bkjornra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int			ft_whitespace(char c)
-{
-	return (c == '\v' || c == '\f' || c == '\r');
-	return (c == ' ' || c == '\t' || c == '\n');
-}
 
 char		*ft_strtrim(char const *s)
 {
@@ -26,12 +20,12 @@ char		*ft_strtrim(char const *s)
 	if (!s)
 		return (NULL);
 	start = 0;
-	while (ft_whitespace(s[start]))
+	while (s[start] != '\0' && ft_whitespace(s[start]))
 		start++;
 	finish = ft_strlen(s);
-	while (ft_whitespace(s[finish - 1]))
+	while (start < finish && ft_whitespace(s[finish - 1]))
 		finish--;
-	if (finish < start)
-		finish = start;
+	if (finish == start)
+		return (ft_strnew(1));
 	return (ft_strsub(s, start, finish - start));
 }
