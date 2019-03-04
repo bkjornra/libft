@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkjornra <bkjornra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/02 04:33:23 by bkjornra          #+#    #+#             */
-/*   Updated: 2019/03/02 04:48:27 by bkjornra         ###   ########.fr       */
+/*   Created: 2019/02/16 11:41:54 by bkjornra          #+#    #+#             */
+/*   Updated: 2019/03/02 17:27:03 by bkjornra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		get_word_len(char const *word, char delim)
+static int		ft_word_len(char const *word, char delim)
 {
 	int		i;
 	int		count;
@@ -32,7 +32,7 @@ static int		get_word_len(char const *word, char delim)
 char			**ft_strsplit(char const *s, char c)
 {
 	int		i;
-	int		j;
+	int		index;
 	int		k;
 	char	**strings;
 
@@ -40,17 +40,17 @@ char			**ft_strsplit(char const *s, char c)
 					ft_count_words(s, c) + 1)))
 		return (NULL);
 	i = 0;
-	j = 0;
+	index = 0;
 	while (i < ft_count_words(s, c))
 	{
 		k = 0;
 		if (!(strings[i] = (char *)malloc(sizeof(char) *
-						get_word_len(&s[j], c) + 1)))
+						ft_word_len(&s[index], c) + 1)))
 			return (NULL);
-		while (s[j] == c)
-			j++;
-		while (s[j] && s[j] != c)
-			strings[i][k++] = s[j++];
+		while (s[index] == c)
+			index++;
+		while (s[index] && s[index] != c)
+			strings[i][k++] = s[index++];
 		strings[i][k] = '\0';
 		i++;
 	}
